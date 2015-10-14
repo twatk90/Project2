@@ -1,4 +1,11 @@
+import java.util.Stack;
 
 public class Reversal {
-
+	public void reverse(String fileName){
+		String[] token = fileName.split("\\s+");
+		Stack s = new Stack();
+		for(int i = 0;i<token.length; i++){
+			s.push(token[i]);
+		}
+	}
 }
