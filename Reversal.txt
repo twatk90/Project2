@@ -1,11 +1,21 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.util.Scanner;
 import java.util.Stack;
 
 public class Reversal {
-	public void reverse(String fileName){
-		String[] token = fileName.split("\\s+");
-		Stack s = new Stack();
-		for(int i = 0;i<token.length; i++){
-			s.push(token[i]);
+	public void reverseFile(File input, File output) throws FileNotFoundException{
+		Scanner in = new Scanner(input);
+		Stack<String> s = new Stack<String>();
+		PrintWriter out = new PrintWriter(output);
+		while(in.hasNext()){
+			s.push(in.next());
 		}
+		while(!s.empty()){
+			out.print(s.pop());
+		}
+		in.close();
+		out.close();
 	}
 }
