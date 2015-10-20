@@ -11,9 +11,9 @@ public class ReversalTest {
 
 	@Test
 	public void test() {
-		File in = new File("C:/Users/Thomas/Desktop/in1.txt");
-		File out = new File("C:/Users/Thomas/Desktop/out1.txt");
-		File check = new File("C:/Users/Thomas/Desktop/check1.txt");
+		File in = new File("in1.txt");
+		File out = new File("out1.txt");
+		File check = new File("check1.txt");
 		try {
 			Scanner s = new Scanner(check);
 			Reversal.Reverse(in, out);
@@ -29,9 +29,22 @@ public class ReversalTest {
 			}
 			String o = sb2.toString();
 			assertEquals("Wrooong",c,o);
+			s.close();
+			output.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
 	}
 
+	@Test
+	public void test2() {
+		File in = new File("in404.txt");
+		File out = new File("out404.txt");
+		try {
+			Reversal.Reverse(in, out);
+			fail();
+		} catch (FileNotFoundException e) {
+			assertTrue(true);
+		}
+	}
 }
