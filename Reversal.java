@@ -6,7 +6,7 @@ import java.util.Stack;
 
 
 public class Reversal {
-	public static void Reverse(File in, File out) throws FileNotFoundException{
+	public static void ReverseFile(File in, File out) throws FileNotFoundException{
 		Scanner input = new Scanner(in);
 		Stack<String> lines = new Stack<String>();
 		Stack<String> words = new Stack<String>();

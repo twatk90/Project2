@@ -16,7 +16,7 @@ public class ReversalTest {
 		File check = new File("check1.txt");
 		try {
 			Scanner s = new Scanner(check);
-			Reversal.Reverse(in, out);
+			Reversal.ReverseFile(in, out);
 			Scanner output = new Scanner(out);
 			StringBuilder sb = new StringBuilder("");
 			StringBuilder sb2 = new StringBuilder("");
@@ -41,10 +41,15 @@ public class ReversalTest {
 		File in = new File("in404.txt");
 		File out = new File("out404.txt");
 		try {
-			Reversal.Reverse(in, out);
+			Reversal.ReverseFile(in, out);
 			fail();
 		} catch (FileNotFoundException e) {
 			assertTrue(true);
 		}
+	}
+	@Test
+	public void test3() {
+		new Reversal();
+		assertTrue(true);
 	}
 }
